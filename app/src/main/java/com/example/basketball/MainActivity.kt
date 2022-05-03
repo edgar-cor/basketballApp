@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
             localScoreValue  -> binding.localScoreText.text = localScoreValue.toString()
         })
 
-        viewModel.localScore.observe(this, Observer {
-            vistorScoreValue -> binding.visitorScoreText.text = vistorScoreValue.toString()
+        viewModel.visitorScore.observe(this, Observer {
+            visitorScoreValue -> binding.visitorScoreText.text = visitorScoreValue.toString()
         })
 
         scoreBasketBall()
@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.localMinusButton.setOnClickListener {
             viewModel.removePointLocal()
-            binding.localScoreText.text = viewModel.localScore.toString()
         }
 
         binding.visitorPlusButton.setOnClickListener {
@@ -56,7 +55,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.visitorMinusButton.setOnClickListener {
             viewModel.removePointVisitor()
-            binding.visitorScoreText.text = viewModel.visitorScore.toString()
         }
         binding.restartButton.setOnClickListener {
             viewModel.resetPoint()

@@ -26,7 +26,7 @@ class MainViewModel: ViewModel() {
 
     fun removePointLocal(  ) {
         if ( localScore.value!! > 0){
-            visitorScore.value = visitorScore.value!! - 1
+            localScore.value = localScore.value!! - 1
         }
     }
 
